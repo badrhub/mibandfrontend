@@ -25,7 +25,7 @@
                   <tr>
                     <th>#</th>
                     <th>Date de prelevement </th>
-                    <th>Value</th>
+                    <th>Data1</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -34,7 +34,7 @@
                     <tr *ngFor="let c of heartbeats | HeartbeatPipe:filter |  paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
                         <td>{{ i + 1}}</td>
                         <td>{{c.date_prelevement}}</td>
-                        <td>{{c.value}}</td>
+                        <td>{{c.data1}}</td>
                         <td>
                           <span style="margin-right: 10px; cursor: pointer;" (click)="deleteHeartbeat(c)">
                               <i class="fas fa-trash-alt  text-primary"></i>

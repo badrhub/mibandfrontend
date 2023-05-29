@@ -39,18 +39,18 @@ export class ClientComponent implements OnInit {
 
   
   /**************************** */
-  deleteClient(p: { id: any; name: string; }){
+  deleteClient(p: Client){
     let c = confirm('sûre de vouloir supprimer  ?')
   if(c){
     this.service.deleteClient(p.id)
     .subscribe((x:any) =>{
       if(x== null){
-        this.errr = "Le client << "+p.name+" >> n'est pas supprimé !!!!!!!!!!!";
+        this.errr = "Le client << "+p.nom+" >> n'est pas supprimé !!!!!!!!!!!";
         this.mode ="list";
       }else{
-        this.clients=x;
+        this. getClients();
         this.mode ="list";
-         this.errr = "Le client << "+p.name+" >> a été supprimé avec succès";
+         this.errr = "Le client << "+p.nom+" >> a été supprimé avec succès";
       }      
     } , y =>{
       console.log(y);
@@ -62,8 +62,8 @@ export class ClientComponent implements OnInit {
   getClients() {
     this.service.getClients()
       .subscribe((x: any) =>{
+        console.log(x);
          this.clients = x;
-         this.errr ="";
       } , y =>{
         console.log(y);
       });
@@ -83,12 +83,12 @@ addClient(){
 }
 
 /******************************** */
-saveClient(d: { name: string; }){
+saveClient(d: Client){
   this.service.addClient(d)
   .subscribe((x: any) =>{
-  this.clients = x;
+  this. getClients();
   this.mode ="list";
-  this.errr = d.name + " est ajouté avec succès";
+  this.errr = d.nom + " est ajouté avec succès";
 } , (y: { error: { message: any; }; }) =>{
     console.log(y);
     this.errr = y.error.message;
@@ -110,7 +110,7 @@ updateClient(d: { name: string; }){
           this.errr = "Le client << "+d.name+" >> n'est pas mis à jour !!!!!!!!!!!";
           this.mode ="list";
         }else{
-          this.clients = x;
+         this. getClients();
           this.errr = d.name + " est modifié avec succès";
          this.mode = "list";
         } 

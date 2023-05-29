@@ -19,8 +19,12 @@
                 <thead class="thead-light">
                   <tr>
                     <th>#</th>
-                    <th>Authentification Key</th>
-                    <th>Nom du client</th>
+                    <th>Nom</th>
+                    <th>Prenom </th>
+                    <th>Mac</th>
+                    <th>Email </th>
+                    <th>Address </th>
+                    <th>Tel </th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -28,8 +32,12 @@
                    <!-- <tr *ngFor="let p of clients | clientPipe:filter | slice: (page-1) * pageSize : page * pageSize   ; let i = index">-->
                     <tr *ngFor="let c of clients | clientPipe:filter |  paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
                         <td>{{ i + 1}}</td>
-                        <td>{{c.id}}</td>
-                        <td>{{c.name}}</td>
+                        <td>{{c.nom}}</td>
+                        <td>{{c.prenom}}</td>
+                        <td>{{c.mac}}</td>
+                        <td>{{c.mail}}</td>
+                        <td>{{c.adresse}}</td>
+                        <td>{{c.tel}}</td>
                         <td>
                           <span style="margin-right: 10px; cursor: pointer;" (click)="deleteClient(c)">
                               <i class="fas fa-trash-alt  text-primary"></i>
@@ -59,15 +67,32 @@
             </div>
                <form #f="ngForm" (ngSubmit)="saveClient(f.value)" autocomplete="off">
                 <div class="form-group">
-                    <label class="control-label">Authentification Key</label>                   
-                    <input type="text" name="id" ngModel  required class="form-control" />                      
+                    <label class="control-label">Nom </label>
+                    <input type="text" name="nom" ngModel  required class="form-control" />                      
                 </div>
                 <div class="form-group">
-                    <label class="control-label">Nom du client</label>
-                    <input type="text" name="name" ngModel  required class="form-control" />                      
-                </div>               	
-                   <button class="btn btn-primary" type="submit" [disabled]="f.invalid" style="margin-right: 15px;">Enregistrer</button>
-                   <button class="btn btn-primary" type="button" (click)="cancelAdd()">Annuler</button>
+                  <label class="control-label">Prenom</label>
+                  <input type="text" name="prenom" ngModel   class="form-control" />                      
+              </div>     
+              <div class="form-group">
+                  <label class="control-label">Mac </label>
+                  <input type="text" name="mac" ngModel required  class="form-control" />                      
+              </div> 
+              <div class="form-group">
+                <label class="control-label">Email </label>
+                <input type="text" name="mail" ngModel   class="form-control" />                      
+              </div> 
+              <div class="form-group">
+                <label class="control-label">Tel </label>
+                <input type="text" name="tel" ngModel   class="form-control" />                      
+              </div>  
+              <div class="form-group">
+                <label class="control-label">Adresse </label>
+                <input type="text" name="adresse" ngModel  class="form-control" />                      
+              </div> 
+            	
+                  <button class="btn btn-primary" type="submit" [disabled]="f.invalid" style="margin-right: 15px;">Enregistrer</button>
+                  <button class="btn btn-primary" type="button" (click)="cancelAdd()">Annuler</button>
               </form>
            </div>
              

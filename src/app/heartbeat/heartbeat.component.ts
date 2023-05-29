@@ -125,11 +125,11 @@ cancelAdd(){
     this.service.updateHeartbeat(url , c)
       .subscribe((x: any) =>{
         if(x== null){
-          this.errr = "Le Heartbeat << "+c.value+" >> n'est pas mis à jour !!!!!!!!!!!";
+          this.errr = "Le Heartbeat << "+c.data1+" >> n'est pas mis à jour !!!!!!!!!!!";
           this.mode ="list";
         }else{
           this.heartbeats = x;
-          this.errr = c.value + " est modifié avec succès";
+          this.errr = c.data1 + " est modifié avec succès";
          this.mode = "list";
         } 
     } , (y: { error: { message: any; }; }) =>{
@@ -150,6 +150,7 @@ cancelAdd(){
       this.service.getHeartbeatsByClient(id)
       .subscribe((x: any) =>{
          this.heartbeats= x;
+         console.log(x);
          this.errr ="";
       } , y =>{
         console.log(y);

@@ -7,14 +7,11 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class AuthenticationService {
 
-      //     host1:string = "http://materiel.dtr.net:8080/demandes" ; 
-           //    host2:string = "http://materiel.dtr.net:8080/auth" ; 
-    
+         
            host1:string = "http://localhost:8088"; 
            host2:string = "http://localhost:8080";
 
-        //    host1:string = "https://localhost/demandes"; 
-        //    host2:string = "https://localhost/auth";
+         //  host1:string = "http://181.215.68.171:8080/mibandbackend"; 
 
    jwt?: string; 
    username?: string;
@@ -29,7 +26,7 @@ export class AuthenticationService {
     return this.host1;
    }
 
-    gethost(){
+    gethostAuth(){
        return this.host2;
    }
    saveToken(jwt: string){

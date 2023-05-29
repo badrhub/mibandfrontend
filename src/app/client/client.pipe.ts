@@ -12,7 +12,7 @@ export class PipeClient implements PipeTransform{
         return clients;
        }else{
         return clients.filter((client) =>{
-          return client.name.toLowerCase() === filterText.toLowerCase();
+          return client.nom.toLowerCase() === filterText.toLowerCase();
         })
        }
     }
