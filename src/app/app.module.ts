@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import {NgPipesModule} from 'ngx-pipes';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClientComponent } from './client/client.component';
@@ -24,7 +23,6 @@ import { HeartbeatPipe } from './heartbeat/heart.pipe';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    NgPipesModule,
     NgxPaginationModule,
     HttpClientModule
   ],

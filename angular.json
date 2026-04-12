@@ -80,10 +80,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "mibandfrontend:build:production"
+              "buildTarget": "mibandfrontend:build:production"
             },
             "development": {
-              "browserTarget": "mibandfrontend:build:development"
+              "buildTarget": "mibandfrontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -91,7 +91,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mibandfrontend:build"
+            "buildTarget": "mibandfrontend:build"
           }
         },
         "test": {
@@ -113,6 +113,5 @@
         }
       }
     }
-  },
-  "defaultProject": "mibandfrontend"
+  }
 }

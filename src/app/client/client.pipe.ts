@@ -3,7 +3,7 @@ import { Client } from "./Client";
 
 
 @Pipe(
-    {name: 'clientPipe'}
+    {name: 'clientPipe', standalone: false}
     )
 export class PipeClient implements PipeTransform{
 

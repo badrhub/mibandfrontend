@@ -5,6 +5,7 @@ import { ClientService } from '../client.service';
 import { Client } from './Client';
 
 @Component({
+  standalone: false,
   selector: 'app-client',
   templateUrl: './client.component.html',
   styleUrls: ['./client.component.css']
@@ -52,7 +53,7 @@ export class ClientComponent implements OnInit {
         this.mode ="list";
          this.errr = "Le client << "+p.nom+" >> a été supprimé avec succès";
       }      
-    } , y =>{
+    } , (y: any) =>{
       console.log(y);
       this.errr = y.error.message;
         });
@@ -64,7 +65,7 @@ export class ClientComponent implements OnInit {
       .subscribe((x: any) =>{
         console.log(x);
          this.clients = x;
-      } , y =>{
+      } , (y: any) =>{
         console.log(y);
       });
   }

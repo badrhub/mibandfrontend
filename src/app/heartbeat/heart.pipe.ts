@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from "@angular/core";
 import { Heartbeat } from "./Heartbeat";
 
 @Pipe(
-    {name: 'HeartbeatPipe'}
+    {name: 'HeartbeatPipe', standalone: false}
     )
 export class HeartbeatPipe implements PipeTransform{
 

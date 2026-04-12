@@ -5,6 +5,7 @@ import { HeartbeatService } from '../heartbeat.service';
 import { Heartbeat } from './Heartbeat';
 
 @Component({
+  standalone: false,
   selector: 'app-heartbeat',
   templateUrl: './heartbeat.component.html',
   styleUrls: ['./heartbeat.component.css']
@@ -57,7 +58,7 @@ getHeartbeats() {
       .subscribe((x: any) =>{
          this.heartbeats= x;
          this.errr ="";
-      } , y =>{
+      } , (y: any) =>{
         console.log(y);
       });
   }
@@ -152,7 +153,7 @@ cancelAdd(){
          this.heartbeats= x;
          console.log(x);
          this.errr ="";
-      } , y =>{
+      } , (y: any) =>{
         console.log(y);
       });
     }  
@@ -164,7 +165,7 @@ cancelAdd(){
       .subscribe((x: any) =>{
          this.currentClient= x;
          this.errr ="";
-      } , y =>{
+      } , (y: any) =>{
         console.log(y);
       });
     }  
